@@ -51,3 +51,20 @@ create table book_lending
     CONSTRAINT  reader_id_fk FOREIGN KEY (reader_id) REFERENCES readers (id)
 );
 
+INSERT INTO genres (id, genre ) VALUES (gen_random_uuid(),'detective');
+INSERT INTO genres (id, genre ) VALUES (gen_random_uuid(),'memoir');
+INSERT INTO genres (id, genre ) VALUES (gen_random_uuid(),'poetry');
+INSERT INTO genres (id, genre ) VALUES (gen_random_uuid(),'drama');
+
+INSERT INTO authors (id, name, surname ) VALUES (gen_random_uuid(),'Matthew', 'Morrison');
+INSERT INTO authors (id, name, surname ) VALUES (gen_random_uuid(),'Christopher', 'Lyons');
+INSERT INTO authors (id, name, surname ) VALUES (gen_random_uuid(),'Margaret', 'Bradley');
+INSERT INTO authors (id, name, surname) VALUES (gen_random_uuid(),'Sibyl', 'Underwood');
+
+INSERT INTO books (id, name, ISBN, genre_id ) VALUES (gen_random_uuid(),'White acacia', '978-2-266-11156-0','31d0778c-7838-41e8-9072-5fa227bac5f5');
+INSERT INTO books (id, name, ISBN, genre_id ) VALUES (gen_random_uuid(),'My struggle', '978-2-277-11156-1','5fef5d8d-28a8-4cf7-8a71-d52b7eda6692');
+INSERT INTO books (id, name, ISBN, genre_id ) VALUES (gen_random_uuid(),'Hot summer', '978-2-255-11156-2','c1755cb6-b9e1-49be-b515-36396e9e3a61');
+INSERT INTO books (id, name, ISBN, genre_id ) VALUES (gen_random_uuid(),'Death in the desert', '978-2-266-11156-0','dbdde944-23e6-492d-bfa8-a72be0781ff0');
+
+INSERT INTO author_book_connection (id, author_id, book_id ) VALUES (gen_random_uuid(),'8b74163f-a8ce-4c9b-8569-144e652c1191', '4c2e68a0-8e79-4796-a49f-1e141e1ad674');
+INSERT INTO author_book_connection (id, author_id, book_id ) VALUES (gen_random_uuid(),'d354907b-7daf-4199-abf6-f73c53193a62', '2c737664-81fd-4aaa-8941-b22f22f46bd0');
