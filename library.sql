@@ -74,7 +74,13 @@ INSERT INTO author_book_connection (id, author_id, book_id ) VALUES (gen_random_
 INSERT INTO author_book_connection (id, author_id, book_id ) VALUES (gen_random_uuid(),'8b74163f-a8ce-4c9b-8569-144e652c1191', 'c8735262-abcb-4a37-9210-f5c60f930266');
 
 
-SELECT * FROM books WHERE name = 'White acacia' OR name = 'Hot summer'
+SELECT * FROM books WHERE name = 'White acacia' OR name = 'Hot summer';
 
 SELECT books.name,isbn ,genres.genre FROM books  JOIN genres ON genres.id = books.genre_id
-WHERE name = 'White acacia'
+WHERE name = 'White acacia';
+
+SELECT books.name,isbn,genres.genre,authors.name,authors.surname FROM author_book_connection
+JOIN books ON books.id = author_book_connection.book_id
+JOIN authors ON authors.id = author_book_connection.author_id
+JOIN genres ON genres.id = books.genre_id
+ORDER BY books.name DESC ;
